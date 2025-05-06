@@ -1,0 +1,396 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Itim&family=Lexend+Giga:wght@100..900&family=Rubik+Wet+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Dark Mode Variables */
+:root {
+    --bg-color: #000;
+    --text-color: #f4f4f9;
+    --accent-color: #f1c40f;
+    --card-bg: #333;
+    --hover-color: #f39c12;
+}
+
+[data-theme="light"] {
+    --bg-color: #f4f4f9;
+    --text-color: #000;
+    --accent-color: #f1c40f;
+    --card-bg: #fff;
+    --hover-color: #f39c12;
+}
+
+body {
+    font-family: "Lexend Giga", serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Link Styles */
+a {
+    color: #f1c40f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f39c12;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: var(--bg-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f1c40f;
+    letter-spacing: 2px;
+}
+
+.navbar .btn {
+    background: #f1c40f;
+    color: #111;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.navbar .btn:hover {
+    background: #f39c12;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(45deg, #f1c40f, #111);
+    color: #fff;
+    border-bottom: 4px solid #f1c40f;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero .hero-btn {
+    background: #f1c40f;
+    color: #111;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.hero .hero-btn:hover {
+    background: #f39c12;
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #1e1e1e;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    color: #f1c40f;
+    margin-bottom: 2rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #f1c40f;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* Cybersecurity News Section */
+.cyber-news {
+    padding: 4rem 2rem;
+    background: #000;
+    color: #f1c40f;
+    text-align: center;
+    border-top: 4px solid #f1c40f;
+}
+
+.cyber-news h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #f1c40f;
+    font-weight: 700;
+}
+
+.cyber-news p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #f1c40f;
+}
+
+.feature .btn{
+    background: rgb(167, 158, 158);
+    color: #111;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.cyber-news .btn {
+    background: #f1c40f;
+    color: #111;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.cyber-news .btn:hover {
+    background: #f39c12;
+}
+
+/* Social Icons Styles */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: #f1c40f;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f39c12;
+    transform: scale(1.2);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #f4f4f9;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: #f4f4f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .features h2 {
+        font-size: 2rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Book Slider Styles */
+.book-slider {
+    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.book-slider h2 {
+    text-align: center;
+    color: #f1c40f;
+    margin-bottom: 2rem;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 2rem;
+    padding: 1rem;
+    animation: slideLoop 20s linear infinite;
+}
+
+@keyframes slideLoop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-270px * 5)); /* Adjust based on number of slides */
+    }
+}
+
+.slider:hover {
+    animation-play-state: paused;
+}
+
+.slide {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.slide:hover {
+    transform: translateY(-5px);
+}
+
+.slide img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.slide h3 {
+    color: #f1c40f;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.slide p {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.book-btn {
+    background: #f1c40f;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+    background: #f39c12;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(241, 196, 15, 0.8);
+    color: #000;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: #f39c12;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
