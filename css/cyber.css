@@ -1,6 +1,13 @@
 /* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Itim&family=Lexend+Giga:wght@100..900&family=Rubik+Wet+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* Dark Mode Variables */
 :root {
     --bg-color: #000;
@@ -19,13 +26,20 @@
 }
 
 body {
-    font-family: "Lexend Giga", serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    font-size: clamp(16px, 2vw, 18px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Link Styles */
@@ -44,31 +58,42 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3rem;
+    padding: 1rem;
     background: var(--bg-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar img {
+    max-width: 80px;
+    height: auto;
 }
 
 .navbar .logo {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     font-weight: bold;
     color: #f1c40f;
     letter-spacing: 2px;
 }
 
 .navbar .btn {
-    background: #f1c40f;
-    color: #111;
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    border-radius: 30px;
+    padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-weight: 500;
-    transition: background 0.3s ease;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .navbar .btn:hover {
-    background: #f39c12;
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
 }
 
 .nav-right {
@@ -95,34 +120,38 @@ a:hover {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
     background: linear-gradient(45deg, #f1c40f, #111);
     color: #fff;
     border-bottom: 4px solid #f1c40f;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.2;
     margin-bottom: 1rem;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    line-height: 1.6;
     margin-bottom: 2rem;
     font-weight: 300;
+    padding: 0 1rem;
 }
 
 .hero .hero-btn {
     background: #f1c40f;
     color: #111;
-    padding: 1rem 3rem;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 3rem);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 600;
     border-radius: 30px;
     transition: background 0.3s ease;
+    display: inline-block;
 }
 
 .hero .hero-btn:hover {
@@ -131,28 +160,30 @@ a:hover {
 
 /* Features Section */
 .features {
-    padding: 4rem 2rem;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
     text-align: center;
     background: #1e1e1e;
 }
 
 .features h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.3;
     color: #f1c40f;
     margin-bottom: 2rem;
 }
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .feature {
     background: var(--card-bg);
-    padding: 2rem;
+    padding: clamp(1rem, 3vw, 2rem);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
@@ -163,16 +194,38 @@ a:hover {
 }
 
 .feature h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
     color: #f1c40f;
     font-weight: 700;
-    text-decoration: none;
 }
 
 .feature p {
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
+    line-height: 1.6;
     color: #bbb;
+}
+
+/* Resource Lists */
+.resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    text-align: left;
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
+    line-height: 1.6;
+}
+
+.resource-list li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-list a {
+    display: inline-block;
+    padding: 0.3rem 0;
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
+    line-height: 1.6;
 }
 
 /* Cybersecurity News Section */
@@ -256,80 +309,41 @@ footer p {
     color: #f4f4f9;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .features h2 {
-        font-size: 2rem;
-    }
-
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Book Slider Styles */
+/* Book Slider */
 .book-slider {
-    padding: 2rem 0;
-    background: rgba(0, 0, 0, 0.8);
-    margin: 2rem 0;
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    background: var(--bg-color);
     overflow: hidden;
-}
-
-.book-slider h2 {
-    text-align: center;
-    color: #f1c40f;
-    margin-bottom: 2rem;
 }
 
 .slider-container {
-    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    overflow: hidden;
+    padding: 0 1rem;
+    position: relative;
 }
 
 .slider {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 2rem;
-    padding: 1rem;
-    animation: slideLoop 20s linear infinite;
+    gap: clamp(1rem, 3vw, 2rem);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 1rem 0;
 }
 
-@keyframes slideLoop {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-270px * 5)); /* Adjust based on number of slides */
-    }
-}
-
-.slider:hover {
-    animation-play-state: paused;
+.slider::-webkit-scrollbar {
+    display: none;
 }
 
 .slide {
+    flex: 0 0 clamp(200px, 40vw, 280px);
     background: var(--card-bg);
+    padding: clamp(0.8rem, 2vw, 1rem);
     border-radius: 10px;
-    padding: 1rem;
     text-align: center;
     transition: transform 0.3s ease;
-    flex-shrink: 0;
 }
 
 .slide:hover {
@@ -337,20 +351,22 @@ footer p {
 }
 
 .slide img {
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 1rem;
 }
 
 .slide h3 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: #f1c40f;
     margin: 0.5rem 0;
-    font-size: 1.2rem;
 }
 
 .slide p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
     color: #fff;
     margin-bottom: 1rem;
 }
@@ -358,10 +374,11 @@ footer p {
 .book-btn {
     background: #f1c40f;
     color: #000;
-    padding: 0.5rem 1rem;
+    padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.8rem, 2vw, 1rem);
     border-radius: 5px;
     text-decoration: none;
     transition: background 0.3s ease;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .book-btn:hover {
@@ -393,4 +410,290 @@ footer p {
 
 .next {
     right: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .navbar .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slider {
+        gap: 1rem;
+    }
+
+    .slide {
+        flex: 0 0 240px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.875rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.875rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.625rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 0.9375rem;
+        margin-bottom: 0.875rem;
+    }
+
+    .resource-list,
+    .resource-list a {
+        font-size: 0.875rem;
+    }
+
+    .resource-list li {
+        margin-bottom: 0.375rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem;
+    }
+
+    .navbar img {
+        max-width: 60px;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .feature {
+        padding: 1.2rem;
+    }
+
+    .slide {
+        flex: 0 0 200px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+        margin-bottom: 0.375rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .resource-list,
+    .resource-list a {
+        font-size: 0.8125rem;
+    }
+
+    .resource-list li {
+        margin-bottom: 0.25rem;
+    }
+
+    .feature p,
+    .cyber-news p {
+        max-width: 100%;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .resource-list,
+    .tips-list {
+        padding-left: 1rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .feature:hover,
+    .slide:hover {
+        transform: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar .btn,
+    .hero .hero-btn,
+    .feature .btn,
+    .cyber-news .btn {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .feature {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* Base button styles */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* Cyber news button specific styles */
+.cyber-news-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 3vw, 1.5rem);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: 44px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cyber-news-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Learn More button specific styles */
+.cyber-news2-btn {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 3vw, 1.5rem);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: 44px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cyber-news2-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile-specific button styles */
+@media (max-width: 768px) {
+    .cyber-news-btn,
+    .cyber-news2-btn {
+        width: 100%;
+        max-width: none;
+        margin: 0.75rem 0;
+        padding: 0.875rem 1.25rem;
+        font-size: 1rem;
+        min-height: 48px;
+    }
+
+    .feature .cyber-news2-btn {
+        margin: 0.75rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .cyber-news-btn,
+    .cyber-news2-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.9375rem;
+        min-height: 44px;
+        margin: 0.5rem 0;
+    }
+
+    .feature .cyber-news2-btn {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .cyber-news-btn:active,
+    .cyber-news2-btn:active {
+        transform: scale(0.98);
+        background-color: var(--hover-color);
+    }
+
+    .cyber-news-btn:hover,
+    .cyber-news2-btn:hover {
+        transform: none;
+    }
+}
+
+/* Tips list text styles */
+.tips-list {
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
+    line-height: 1.6;
+}
+
+.tips-list li {
+    margin-bottom: 0.5rem;
 }

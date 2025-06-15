@@ -431,14 +431,16 @@ header .circle {
 
 .cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  gap: 2rem;
 }
 
 .card-wrap {
   position: relative;
   margin: 1.7rem 0.8rem;
+  width: 390px;
 }
 
 .card {
@@ -454,6 +456,7 @@ header .circle {
   padding: 3rem 2rem;
   overflow: hidden;
   transition: 0.3s;
+  margin: 0 auto;
 }
 
 .card:before {
@@ -489,7 +492,9 @@ header .circle {
 
 .icon {
   width: 90px;
+  height: 90px;
   margin-bottom: 1.7rem;
+  object-fit: contain;
 }
 
 .card .title-sm {
@@ -499,6 +504,8 @@ header .circle {
 .card .text {
   font-size: 1.15rem;
   margin: 1.8rem 0;
+  height: 120px;
+  overflow: hidden;
 }
 
 .services .points1 {
@@ -679,14 +686,34 @@ header .circle {
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
-.img-description {
+.img-overlay .img-description h5 a {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--main-color);
+  color: var(--light-one);
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.img-description a{
+  color: white;
+  background-color: white;
   width: 100%;
+}
+
+.img-overlay .img-description h5 a:hover {
+  background-color: #6b44e0;
+  transform: translateY(-2px);
+  color: var(--light-one);
 }
 
 .img-overlay h3 {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .img-overlay h5 {
@@ -1223,8 +1250,9 @@ header .circle {
 /* Footer */
 
 .footer {
-  background-color: var(--section-bg);
+  background-color: rgb(64, 62, 62);
   padding: 6rem 0;
+  color: white;
 }
 
 .footer .grid-4 {
@@ -1533,19 +1561,22 @@ header .circle {
   }
 
   .card {
-    min-height: 390px;
-    max-width: 290px;
-    padding: 2.2rem 1.5rem;
+    min-height: 450px;
+    max-width: 340px;
+    padding: 2.5rem 1.8rem;
+  }
+
+  .card-wrap {
+    width: 340px;
+  }
+
+  .card .text {
+    height: 100px;
   }
 
   .icon {
     width: 65px;
     margin-bottom: 0.8rem;
-  }
-
-  .card .text {
-    font-size: 0.9rem;
-    margin: 1rem 0;
   }
 
   .card:before {
@@ -1817,6 +1848,16 @@ header .circle {
   .back-btn-wrap:before {
     width: 45px;
     height: 45px;
+  }
+
+  .img-overlay h5 a {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .gallery-image .img-overlay .img-description h5 a {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -2098,6 +2139,16 @@ header .circle {
 
   .followme-wrap {
     margin-top: 0.8rem;
+  }
+
+  .img-overlay h5 a {
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .gallery-image .img-overlay .img-description h5 a {
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
   }
 }
 
